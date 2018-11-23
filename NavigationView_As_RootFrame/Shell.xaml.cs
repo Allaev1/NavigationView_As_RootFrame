@@ -27,10 +27,9 @@ namespace NavigationView_As_RootFrame
             this.InitializeComponent();
         }
 
-        ShellViewModel _viewModel;
         public ShellViewModel ViewModel
         {
-            get { return _viewModel ?? (_viewModel = (ShellViewModel)DataContext); }
+            get { return new ShellViewModel(); }
         }
     }
 }

@@ -14,21 +14,26 @@ namespace NavigationView_As_RootFrame
     public class ShellViewModel : ViewModelBase
     {
         INavigationService navigationService;
+        //FrameNavigationService frameNavigationService;
         public ShellViewModel()
         {
             navigationService = WindowWrapper.Current().NavigationServices.FirstOrDefault();
+            //frameNavigationService = new FrameNavigationService();
         }
 
         public void OnSelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
+            Frame contentFrame = sender.Content as Frame;
             NavigationViewItem selectedItem = ((NavigationViewItem)args.SelectedItem);
             switch (selectedItem.Tag)
             {
                 case "FirstPage":
-                    navigationService.Navigate(typeof(FirstPage));
+                    contentFrame.Navigate(typeof(FirstPage));
+                    //frameNavigationService.NavigateTo(contentFrame, typeof(FirstPage));
                     break;
                 case "SecondPage":
-                    navigationService.Navigate(typeof(SecondPage));
+                    contentFrame.Navigate(typeof(SecondPage));
+                    //frameNavigationService.NavigateTo(contentFrame,typeof(SecondPage));
                     break;
             }
         }
