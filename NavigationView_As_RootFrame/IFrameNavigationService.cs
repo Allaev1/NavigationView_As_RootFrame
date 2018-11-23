@@ -7,6 +7,7 @@ using Windows.UI.Xaml.Controls;
 
 namespace NavigationView_As_RootFrame
 {
+    //TODO: Нужны ли вообще этот интерфейс ?
     /// <summary>
     /// Предоставляет метод для навигаций фрейма который находится в NavigationView
     /// </summary>
