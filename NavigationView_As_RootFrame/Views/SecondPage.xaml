@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="NavigationView_As_RootFrame.MainPage"
+    x:Class="NavigationView_As_RootFrame.Views.SecondPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:NavigationView_As_RootFrame"
@@ -9,6 +9,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <TextBlock Text="This is Second Page" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"/>
     </Grid>
 </Page>

@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="NavigationView_As_RootFrame.Shell"
+    x:Class="NavigationView_As_RootFrame.Views.FirstPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:NavigationView_As_RootFrame"
@@ -7,11 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <NavigationView SelectionChanged="{x:Bind ViewModel.OnSelectionChanged}">
-        <NavigationView.MenuItems>
-            <NavigationViewItem Icon="Contact" Tag="FirstPage"/>
-            <NavigationViewItem Icon="Favorite" Tag="SecondPage"/>
-        </NavigationView.MenuItems>
-    </NavigationView>
+    
+    <Grid>
+        <TextBlock Text="This is First Page" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"/>
+    </Grid>
 </Page>

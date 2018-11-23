@@ -15,22 +15,16 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace NavigationView_As_RootFrame
+namespace NavigationView_As_RootFrame.Views
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Shell : Page
+    public sealed partial class SecondPage : Page
     {
-        public Shell()
+        public SecondPage()
         {
             this.InitializeComponent();
-        }
-
-        ShellViewModel _viewModel;
-        public ShellViewModel ViewModel
-        {
-            get { return _viewModel ?? (_viewModel = (ShellViewModel)DataContext); }
         }
     }
 }

@@ -17,6 +17,8 @@ using Windows.UI.Xaml.Navigation;
 using Template10.Common;
 using Template10.Services.NavigationService;
 using System.Threading.Tasks;
+using NavigationView_As_RootFrame.Views;
+using GalaSoft.MvvmLight.Ioc;
 
 namespace NavigationView_As_RootFrame
 {
@@ -25,6 +27,8 @@ namespace NavigationView_As_RootFrame
     /// </summary>
     sealed partial class App : BootStrapper
     {
+        private INavigationService navigationService;
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -34,11 +38,28 @@ namespace NavigationView_As_RootFrame
             this.InitializeComponent();
         }
 
+        public override UIElement CreateRootElement(IActivatedEventArgs e)
+        {
+            navigationService = NavigationServiceFactory(BackButton.Attach, ExistingContent.Include);
+
+            return new Shell();
+        }
+
         public override Task OnStartAsync(StartKind startKind, IActivatedEventArgs args)
         {
-            NavigationService.Navigate(typeof(MainPage));
+            SimpleIoc.Default.Register<ShellViewModel>();
+
+            navigationService.Navigate(typeof(FirstPage));
 
             return Task.CompletedTask;
+        }
+
+        public override INavigable ResolveForPage(Page page, NavigationService navigationService)
+        {
+            if (page is Shell)
+                return SimpleIoc.Default.GetInstance<ShellViewModel>();
+            else
+                return base.ResolveForPage(page, navigationService);
         }
 
         /// <summary>
