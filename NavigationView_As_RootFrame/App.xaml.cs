@@ -37,16 +37,28 @@ namespace NavigationView_As_RootFrame
             this.InitializeComponent();
         }
 
+        /// <summary>
+        /// Создает корневой Frame
+        /// </summary>
+        /// <param name="e"></param>
+        /// <returns></returns>
         public override UIElement CreateRootElement(IActivatedEventArgs e)
         {
             return new Shell();
         }
 
+        /// <summary>
+        /// Вызывается при запуске приложения
+        /// </summary>
+        /// <param name="startKind"></param>
+        /// <param name="args"></param>
+        /// <returns></returns>
         public override Task OnStartAsync(StartKind startKind, IActivatedEventArgs args)
         {
             //Shell shell = new Shell();
             //var contentFrame = shell.Frame;
-            //contentFrame.Navigate(typeof(FirstPage)); //TODO: Возникает ошибка - Object reference not set to an instance of an object
+            //TODO: Возникает ошибка в строке 50 - Object reference not set to an instance of an object
+            //contentFrame.Navigate(typeof(FirstPage)); 
             contentFrame.Navigate(typeof(FirstPage));
 
             return Task.CompletedTask;
