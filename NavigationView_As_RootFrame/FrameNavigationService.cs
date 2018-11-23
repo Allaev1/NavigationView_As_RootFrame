@@ -11,7 +11,7 @@ namespace NavigationView_As_RootFrame
     {
         public void NavigateTo(Frame frame, Type page)
         {
-            frame.Navigate(page.GetType()); //Возникает исключение Attempted to read or write protected memory. This is often an indication that other memory is corrupt.'
+            frame.Navigate(page.GetType()); //TODO: Возникает исключение Attempted to read or write protected memory. This is often an indication that other memory is corrupt.'
         }
     }
 }
