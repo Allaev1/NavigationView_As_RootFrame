@@ -27,8 +27,7 @@ namespace NavigationView_As_RootFrame
     /// </summary>
     sealed partial class App : BootStrapper
     {
-        private INavigationService navigationService;
-
+        Frame contentFrame;
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -46,9 +45,9 @@ namespace NavigationView_As_RootFrame
         public override Task OnStartAsync(StartKind startKind, IActivatedEventArgs args)
         {
             //Shell shell = new Shell();
-            //object content = shell.Content;
-            //var contentFrame = content as Frame;
-            //contentFrame.Navigate(typeof(FirstPage));
+            //var contentFrame = shell.Frame;
+            //contentFrame.Navigate(typeof(FirstPage)); //TODO: Возникает ошибка - Object reference not set to an instance of an object
+            contentFrame.Navigate(typeof(FirstPage));
 
             return Task.CompletedTask;
         }

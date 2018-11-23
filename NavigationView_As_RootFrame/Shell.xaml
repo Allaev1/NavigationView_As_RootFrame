@@ -13,6 +13,6 @@
             <NavigationViewItem Icon="Contact" Content="FirstPage" Tag="FirstPage"/>
             <NavigationViewItem Icon="Favorite" Content="SecondPage" Tag="SecondPage"/>
         </NavigationView.MenuItems>
-        <Frame/>
+        <Frame x:Name="MyNav"/>
     </NavigationView>
 </Page>
