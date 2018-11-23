@@ -1,7 +1,8 @@
-﻿<Application
+﻿<Template10:BootStrapper
     x:Class="NavigationView_As_RootFrame.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:Template10="using:Template10.Common"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:NavigationView_As_RootFrame">
 
-</Application>
+</Template10:BootStrapper>
