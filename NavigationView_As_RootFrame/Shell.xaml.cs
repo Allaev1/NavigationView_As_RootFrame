@@ -25,7 +25,10 @@ namespace NavigationView_As_RootFrame
         public Shell()
         {
             this.InitializeComponent();
+            ContentFrame = RootFrame;
         }
+
+        public Frame ContentFrame { set; get; }
 
         public ShellViewModel ViewModel
         {

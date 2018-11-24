@@ -16,12 +16,9 @@ namespace NavigationView_As_RootFrame
         /// <summary>
         /// Делает навигацию на страницу 
         /// </summary>
-        /// <param name="frame">
-        /// Фрейм который делает навигацию
-        /// </param>
         /// <param name="page">
         /// Страница на которую нужно сделать навигацию
         /// </param>
-        void NavigateTo(Frame frame,Type page);
+        void NavigateTo(Page page);
     }
 }
