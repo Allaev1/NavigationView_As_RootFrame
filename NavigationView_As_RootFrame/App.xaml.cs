@@ -27,7 +27,7 @@ namespace NavigationView_As_RootFrame
     /// </summary>
     sealed partial class App : BootStrapper
     {
-        FrameNavigationService frameNavigation;
+        INavigationService navigationService;
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -46,8 +46,7 @@ namespace NavigationView_As_RootFrame
         {
             Shell shell = new Shell();
 
-            frameNavigation = new FrameNavigationService();
-            frameNavigation.SetContentFrame(shell.ContentFrame);
+            navigationService = NavigationServiceFactory(BackButton.Attach, ExistingContent.Include,shell.ContentFrame);
 
             return shell;
         }
@@ -60,7 +59,7 @@ namespace NavigationView_As_RootFrame
         /// <returns></returns>
         public override Task OnStartAsync(StartKind startKind, IActivatedEventArgs args)
         {
-            frameNavigation.NavigateTo(new FirstPage());
+            navigationService.Navigate(typeof(FirstPage));
 
             return Task.CompletedTask;
         }

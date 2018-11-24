@@ -13,12 +13,10 @@ namespace NavigationView_As_RootFrame
 {
     public class ShellViewModel : ViewModelBase
     {
-        //INavigationService navigationService; // Закоментирована т.к. не используется навигация от Template10
-        FrameNavigationService frameNavigationService; //Закоментирована т.к. методы класса во время работы генерируют исключения 
+        INavigationService navigationService;
         public ShellViewModel()
         {
-            //navigationService = WindowWrapper.Current().NavigationServices.FirstOrDefault(); 
-            frameNavigationService = new FrameNavigationService();
+            navigationService = WindowWrapper.Current().NavigationServices.FirstOrDefault();
         }
 
         public void OnSelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
@@ -27,10 +25,10 @@ namespace NavigationView_As_RootFrame
             switch (selectedItem.Tag)
             {
                 case "FirstPage":
-                    frameNavigationService.NavigateTo(new FirstPage());
+                    NavigationService.Navigate(typeof(FirstPage));
                     break;
                 case "SecondPage":
-                    frameNavigationService.NavigateTo(new SecondPage());
+                    NavigationService.Navigate(typeof(SecondPage));
                     break;
             }
         }
