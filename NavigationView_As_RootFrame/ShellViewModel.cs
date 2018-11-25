@@ -25,10 +25,10 @@ namespace NavigationView_As_RootFrame
             switch (selectedItem.Tag)
             {
                 case "FirstPage":
-                    NavigationService.Navigate(typeof(FirstPage));
+                    navigationService.Navigate(typeof(FirstPage));
                     break;
                 case "SecondPage":
-                    NavigationService.Navigate(typeof(SecondPage));
+                    navigationService.Navigate(typeof(SecondPage));
                     break;
             }
         }
